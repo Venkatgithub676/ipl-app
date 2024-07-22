@@ -1,10 +1,12 @@
 // Write your code here
 import './index.css'
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import TeamCard from '../TeamCard'
 
 class Home extends Component {
-  state = {data: []}
+  state = {data: [], isLoading: true}
 
   componentDidMount() {
     this.fetchData()
@@ -21,13 +23,18 @@ class Home extends Component {
       name: each.name,
     }))
 
-    this.setState({data})
+    this.setState({data, isLoading: false})
   }
 
   render() {
-    const {data} = this.state
-    return (
-      <div className="home-con">
+    const {data, isLoading} = this.state
+    // testid="loader"
+    const res = isLoading ? (
+      <div testid="loader" className="loader">
+        <Loader type="Oval" color="#ffffff" height={50} />
+      </div>
+    ) : (
+      <>
         <div className="img-heading">
           <img
             src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png "
@@ -41,8 +48,9 @@ class Home extends Component {
             <TeamCard key={each.id} each={each} />
           ))}
         </ul>
-      </div>
+      </>
     )
+    return <div className="home-con">{res}</div>
   }
 }
 export default Home

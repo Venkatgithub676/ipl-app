@@ -1,1 +1,105 @@
 /* Write your CSS here */
+.latest-match-con {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  border-radius: 10px;
+  padding: 20px 50px 20px 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .latest-match-con {
+    flex-direction: column;
+  }
+}
+.latest-match-img-con1 {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .latest-match-img-con1 {
+    width: 100%;
+  }
+}
+.competing-team-logo {
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .competing-team-logo {
+    width: 120px;
+  }
+}
+.latest-match-details-con1 {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  width: 50%;
+}
+
+.latest-match-details-con1-headings {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .latest-match-details-con1-headings {
+    font-size: 18px;
+  }
+}
+.latest-match-details-con1-para {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .latest-match-details-con1-para {
+    font-size: 12px;
+  }
+}
+
+.hr-line {
+  width: 0%;
+  color: transparent;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hr-line {
+    width: 100%;
+    border: 1px solid #ffffff;
+  }
+}
+.latest-match-details-con2 {
+  font-family: 'Bree Serif';
+  color: #ffffff;
+  text-align: right;
+  width: 40%;
+}
+@media screen and (max-width: 768px) {
+  .latest-match-details-con2 {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.latest-match-details-con2-headings {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .latest-match-details-con2-headings {
+    font-size: 12px;
+  }
+}
+.latest-match-details-con2-para {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .latest-match-details-con2-para {
+    font-size: 12px;
+  }
+}

@@ -10,6 +10,11 @@
   margin-bottom: 20px;
   border: 1px solid #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+  .link-comp {
+  }
+}
 .team-card-li-con {
   display: flex;
   align-items: center;
@@ -20,9 +25,22 @@
   height: 80px;
   margin-right: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .team-card-team-img {
+    width: 60px;
+    height: 60px;
+  }
+}
 .team-card-team-name {
   font-family: 'Bree Serif';
   color: #ffffff;
   font-size: 25px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .team-card-team-name {
+    font-size: 15px;
+  }
 }

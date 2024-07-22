@@ -2,9 +2,13 @@
 
 import './index.css'
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import LatestMatch from '../LatestMatch'
+import MatchCard from '../MatchCard'
 
 class TeamMatches extends Component {
-  state = {data: {}}
+  state = {data: {}, isLoading: true}
 
   componentDidMount() {
     this.fetchData()
@@ -17,6 +21,7 @@ class TeamMatches extends Component {
     // console.log(id)
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const res = await response.json()
+    // console.log(res)
     let colors = ''
     switch (id) {
       case 'RCB':
@@ -76,20 +81,36 @@ class TeamMatches extends Component {
       })),
       colors,
     }
-    console.log(data)
-    this.setState({data})
+    // console.log(data)
+    this.setState({data, isLoading: false})
   }
 
   render() {
-    const {data} = this.state
+    const {data, isLoading} = this.state
     const {teamBannerUrl, latestMatchDetails, recentMatches, colors} = data
-    return (
-      <div className={`bg-con ${colors}`}>
-        <div className="team-matches-main-con">
-          <img src={teamBannerUrl} alt="" className="team-banner-img" />
-        </div>
+    console.log(latestMatchDetails)
+    const res = isLoading ? (
+      <div testid="loader" className="loader">
+        <Loader type="Oval" color="#ffffff" height={50} />
+      </div>
+    ) : (
+      <div className="team-matches-main-con">
+        <img
+          src={teamBannerUrl}
+          alt="team banner"
+          className="team-banner-img"
+        />
+        <h1 className="latest-matches-heading">Latest Matches</h1>
+        <LatestMatch latestMatchDetails={latestMatchDetails} />
+        <ul className="team-matches-ul-con">
+          {recentMatches.map(each => (
+            <MatchCard each={each} key={each.id} />
+          ))}
+        </ul>
       </div>
     )
+
+    return <div className={`bg-con ${colors}`}>{res}</div>
   }
 }
 

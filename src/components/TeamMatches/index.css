@@ -1,12 +1,23 @@
 /* Write your CSS here */
 
 .bg-con {
-  height: 100vh;
+  min-height: 100vh;
   padding: 30px;
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .team-matches-main-con {
   width: 70%;
   margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .team-matches-main-con {
+    width: 95%;
+  }
 }
 
 .team-banner-img {
@@ -40,4 +51,22 @@
 
 .sh {
   background-color: #f26d22;
+}
+
+.latest-matches-heading {
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .latest-matches-heading {
+    font-size: 15px;
+  }
+}
+.team-matches-ul-con {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
 }
