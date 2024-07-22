@@ -22,34 +22,7 @@ class TeamMatches extends Component {
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const res = await response.json()
     // console.log(res)
-    let colors = ''
-    switch (id) {
-      case 'RCB':
-        colors = 'rcb'
-        break
-      case 'KKR':
-        colors = 'kkr'
-        break
-      case 'KXP':
-        colors = 'kxp'
-        break
-      case 'CSK':
-        colors = 'csk'
-        break
-      case 'RR':
-        colors = 'rr'
-        break
-      case 'MI':
-        colors = 'mi'
-        break
-      case 'SH':
-        colors = 'sh'
-        break
-      case 'DC':
-        colors = 'dc'
-        break
-      default:
-    }
+
     // console.log(colors)
     const data = {
       teamBannerUrl: res.team_banner_url,
@@ -79,19 +52,53 @@ class TeamMatches extends Component {
         secondInnings: each.second_innings,
         matchStatus: each.match_status,
       })),
-      colors,
     }
     // console.log(data)
     this.setState({data, isLoading: false})
   }
 
+  getBgColor = () => {
+    const {match} = this.props
+    const {params} = match
+    const {id} = params
+    let colors = ''
+    switch (id) {
+      case 'RCB':
+        colors = 'rcb'
+        break
+      case 'KKR':
+        colors = 'kkr'
+        break
+      case 'KXP':
+        colors = 'kxp'
+        break
+      case 'CSK':
+        colors = 'csk'
+        break
+      case 'RR':
+        colors = 'rr'
+        break
+      case 'MI':
+        colors = 'mi'
+        break
+      case 'SH':
+        colors = 'sh'
+        break
+      case 'DC':
+        colors = 'dc'
+        break
+      default:
+    }
+    return colors
+  }
+
   render() {
     const {data, isLoading} = this.state
-    const {teamBannerUrl, latestMatchDetails, recentMatches, colors} = data
+    const {teamBannerUrl, latestMatchDetails, recentMatches} = data
     console.log(latestMatchDetails)
     const res = isLoading ? (
       <div className="loader">
-        <Loader type="Oval" color="#ffffff" height={50} />
+        <Loader type="ThreeDots" color="#ffffff" height={50} />
       </div>
     ) : (
       <div className="team-matches-main-con">
@@ -110,7 +117,7 @@ class TeamMatches extends Component {
       </div>
     )
 
-    return <div className={`bg-con ${colors}`}>{res}</div>
+    return <div className={`bg-con ${this.getBgColor()}`}>{res}</div>
   }
 }
 
