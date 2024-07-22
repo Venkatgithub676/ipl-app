@@ -30,7 +30,7 @@ class Home extends Component {
     const {data, isLoading} = this.state
     // testid="loader"
     const res = isLoading ? (
-      <div testid="loader" className="loader">
+      <div className="loader">
         <Loader type="Oval" color="#ffffff" height={50} />
       </div>
     ) : (

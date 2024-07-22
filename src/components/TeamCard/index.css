@@ -5,8 +5,7 @@
   text-decoration: none;
   background-color: #ffffff33;
   border-radius: 10px;
-  height: 120px;
-  padding: 20px;
+  padding: 10px 15px 10px 15px;
   margin-bottom: 20px;
   border: 1px solid #ffffff;
 }
@@ -35,7 +34,7 @@
 .team-card-team-name {
   font-family: 'Bree Serif';
   color: #ffffff;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
 }
 

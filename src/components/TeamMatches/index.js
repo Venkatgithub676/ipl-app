@@ -90,7 +90,7 @@ class TeamMatches extends Component {
     const {teamBannerUrl, latestMatchDetails, recentMatches, colors} = data
     console.log(latestMatchDetails)
     const res = isLoading ? (
-      <div testid="loader" className="loader">
+      <div className="loader">
         <Loader type="Oval" color="#ffffff" height={50} />
       </div>
     ) : (
