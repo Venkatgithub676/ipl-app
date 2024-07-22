@@ -1,1 +1,43 @@
 /* Write your CSS here */
+
+.bg-con {
+  height: 100vh;
+  padding: 30px;
+}
+.team-matches-main-con {
+  width: 70%;
+  margin: auto;
+}
+
+.team-banner-img {
+  width: 100%;
+}
+
+.rcb {
+  background-color: #a4261d;
+}
+
+.kkr {
+  background-color: #5755a7;
+}
+
+.kxp {
+  background-color: #d91c1f;
+}
+.csk {
+  background-color: #f7db00;
+}
+
+.rr {
+  background-color: #da237b;
+}
+.mi {
+  background-color: #13418b;
+}
+.dc {
+  background-color: #4f5db0;
+}
+
+.sh {
+  background-color: #f26d22;
+}
